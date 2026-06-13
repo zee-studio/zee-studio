@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zee Studio | Premium Graphic Designer Portfolio</title>
+    
+    <!-- Fonts Integration (Poppins & Noto Sans Myanmar) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons & Animation Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,24 +27,16 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        }
+                        sans: ['Poppins', 'Noto Sans Myanmar', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', 'Noto Sans Myanmar', 'sans-serif';
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .glass {
@@ -61,117 +59,143 @@
         .bg-gradient-brand {
             background: linear-gradient(135deg, #ff7e00 0%, #b70000 100%);
         }
+        
+        /* Premium Polygonal Profile Shape */
+        .designer-shield {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        /* Custom Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #ff7e00 0%, #b70000 100%);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-zinc-950 dark:text-zinc-50 antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
 
+    <!-- Background Decorative Glows -->
     <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
         <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-orange/10 dark:bg-brand-orange/5 blur-[120px]"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-red/10 dark:bg-brand-red/5 blur-[120px]"></div>
     </div>
 
+    <!-- Navigation Bar -->
     <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto flex items-center justify-between glass rounded-2xl px-6 py-3 shadow-lg">
-            <a href="#" class="flex items-center gap-2 font-extrabold text-2xl tracking-wider uppercase group">
-                <span class="text-gradient">Zee</span>
-                <span class="text-slate-800 dark:text-white group-hover:text-brand-orange transition-colors">Studio</span>
+        <div class="max-w-7xl mx-auto flex items-center justify-between glass rounded-2xl px-4 sm:px-6 py-3 shadow-lg">
+            <!-- Brand Identity Logo integration -->
+            <a href="#" class="flex items-center gap-2 sm:gap-3 font-extrabold text-xl sm:text-2xl tracking-wider uppercase group">
+                <img src="https://i.ibb.co/prbkQbgj/IMG-20260612-230846.png" alt="Zee Studio Logo" class="h-8 sm:h-9 w-auto rounded-md object-contain">
+                <span class="text-gradient">Zee <span class="text-slate-800 dark:text-white group-hover:text-brand-orange transition-colors">Studio</span></span>
             </a>
-
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="#hero" class="hover:text-brand-orange transition-colors">Home</a>
-                <a href="#about" class="hover:text-brand-orange transition-colors">About</a>
-                <a href="#services" class="hover:text-brand-orange transition-colors">Services</a>
-                <a href="#portfolio" class="hover:text-brand-orange transition-colors">Portfolio</a>
-                <a href="#skills" class="hover:text-brand-orange transition-colors">Skills</a>
-                <a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a>
+            
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm">
+                <a href="#hero" class="hover:text-brand-orange transition-colors lang" data-en="Home" data-mm="ပင်မစာမျက်နှာ">Home</a>
+                <a href="#about" class="hover:text-brand-orange transition-colors lang" data-en="About" data-mm="ကျွန်ုပ်အကြောင်း">About</a>
+                <a href="#services" class="hover:text-brand-orange transition-colors lang" data-en="Services" data-mm="ဝန်ဆောင်မှုများ">Services</a>
+                <a href="#portfolio" class="hover:text-brand-orange transition-colors lang" data-en="Portfolio" data-mm="လက်ရာများ">Portfolio</a>
+                <a href="#contact" class="hover:text-brand-orange transition-colors lang" data-en="Contact" data-mm="ဆက်သွယ်ရန်">Contact</a>
             </nav>
-
-            <div class="flex items-center gap-4">
-                <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all shadow-sm" aria-label="Toggle theme">
-                    <i id="theme-icon" class="fas fa-moon text-lg text-brand-orange"></i>
+            
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Language Switcher Button -->
+                <button id="lang-toggle" class="px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all shadow-sm text-xs font-semibold flex items-center gap-1" aria-label="Switch Language">
+                    <span id="lang-flag">🇲🇲</span> <span id="lang-text" class="hidden xs:inline">မြန်မာ</span>
                 </button>
-                <a href="#contact" class="hidden sm:inline-block bg-gradient-brand text-white px-5 py-2.5 rounded-xl font-medium text-sm shadow-md hover:shadow-xl hover:opacity-90 transition-all transform hover:-translate-y-0.5">
-                    Hire Me
-                </a>
-                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all" aria-label="Toggle menu">
-                    <i class="fas fa-bars text-lg"></i>
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="p-2 sm:p-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all shadow-sm" aria-label="Toggle theme">
+                    <i id="theme-icon" class="fas fa-moon text-base sm:text-lg text-brand-orange"></i>
+                </button>
+                
+                <button id="mobile-menu-btn" class="md:hidden p-2 sm:p-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">
+                    <i class="fas fa-bars text-base sm:text-lg"></i>
                 </button>
             </div>
         </div>
-
-        <div id="mobile-menu" class="hidden md:hidden mt-3 max-w-7xl mx-auto glass rounded-2xl p-6 shadow-xl flex flex-col gap-4 font-medium text-center">
-            <a href="#hero" class="mobile-link py-2 hover:text-brand-orange transition-colors">Home</a>
-            <a href="#about" class="mobile-link py-2 hover:text-brand-orange transition-colors">About</a>
-            <a href="#services" class="mobile-link py-2 hover:text-brand-orange transition-colors">Services</a>
-            <a href="#portfolio" class="mobile-link py-2 hover:text-brand-orange transition-colors">Portfolio</a>
-            <a href="#skills" class="mobile-link py-2 hover:text-brand-orange transition-colors">Skills</a>
-            <a href="#contact" class="mobile-link py-2 hover:text-brand-orange transition-colors">Contact</a>
-            <a href="#contact" class="mobile-link bg-gradient-brand text-white py-3 rounded-xl mt-2 block shadow-md">Hire Me</a>
+        
+        <!-- Mobile Dropdown Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3 max-w-7xl mx-auto glass rounded-2xl p-5 shadow-xl flex flex-col gap-3 font-medium text-center">
+            <a href="#hero" class="mobile-link py-2 hover:text-brand-orange transition-colors lang" data-en="Home" data-mm="ပင်မစာမျက်နှာ">Home</a>
+            <a href="#about" class="mobile-link py-2 hover:text-brand-orange transition-colors lang" data-en="About" data-mm="ကျွန်ုပ်အကြောင်း">About</a>
+            <a href="#services" class="mobile-link py-2 hover:text-brand-orange transition-colors lang" data-en="Services" data-mm="ဝန်ဆောင်မှုများ">Services</a>
+            <a href="#portfolio" class="mobile-link py-2 hover:text-brand-orange transition-colors lang" data-en="Portfolio" data-mm="လက်ရာများ">Portfolio</a>
+            <a href="#contact" class="mobile-link py-2 hover:text-brand-orange transition-colors lang" data-en="Contact" data-mm="ဆက်သွယ်ရန်">Contact</a>
         </div>
     </header>
 
-    <main class="pt-28">
-        <section id="hero" class="min-h-[85vh] flex items-center px-4 sm:px-8 max-w-7xl mx-auto relative mb-16 lg:mb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
-                <div class="lg:col-span-7 flex flex-col justify-center text-center lg:text-left space-y-6">
-                    <div class="inline-flex items-center gap-2 self-center lg:self-start px-4 py-1.5 rounded-full border border-brand-orange/30 bg-brand-orange/5 text-brand-orange text-xs font-semibold uppercase tracking-wider">
-                        <i class="fas fa-sparkles"></i> Available for Freelance & Contract
+    <main class="pt-24 sm:pt-28">
+        <!-- Hero Banner Area -->
+        <section id="hero" class="min-h-[75vh] md:min-h-[80vh] flex items-center px-4 sm:px-8 max-w-7xl mx-auto relative mb-12 sm:mb-16 lg:mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full py-6">
+                
+                <!-- Info Section (Order swap for mobile view to display top) -->
+                <div class="lg:col-span-7 flex flex-col justify-center text-center lg:text-left space-y-5 sm:space-y-6 order-2 lg:order-1" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 self-center lg:self-start px-3.5 py-1.5 rounded-full border border-brand-orange/30 bg-brand-orange/5 text-brand-orange text-xs font-semibold uppercase tracking-wider lang" data-en="✨ Available for Freelance & Contract" data-mm="✨ Freelance & Project များ အပ်နှံနိုင်ပါသည်">
+                        ✨ Available for Freelance & Contract
                     </div>
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
-                        Crafting High-End Visuals At <br>
-                        <span class="text-gradient uppercase">Zee Studio</span>
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
+                        <span class="lang" data-en="Crafting High-End Visuals At" data-mm="စွဲမက်ဖွယ် အဆင့်မြင့်ဒီဇိုင်းများကို">Crafting High-End Visuals At</span> <br>
+                        <span class="text-gradient uppercase tracking-wide">Zee Studio</span>
                     </h1>
-                    <p class="text-lg text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        I am a professional <strong class="font-medium text-slate-900 dark:text-white">Graphic Designer</strong> specialized in shaping modern brands through pixel-perfect identities, premium social assets, and memorable vector art.
+                    <p class="text-base sm:text-lg text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed lang" 
+                       data-en="I am a professional Graphic Designer specialized in shaping modern brands through pixel-perfect identities, premium social assets, and memorable vector art." 
+                       data-mm="ကျွန်တော်သည် ခေတ်မီပြီး အမြင်ဆန်းသစ်သော Brand Identity များ၊ Premium Social Media Graphic များနှင့် စွဲထင်ကျန်ရစ်မည့် Vector Art များကို စိတ်တိုင်းကျ ဖန်တီးပေးနေသော ကျွမ်းကျင်ဒီဇိုင်နာတစ်ဦး ဖြစ်ပါသည်။">
+                        I am a professional Graphic Designer specialized in shaping modern brands through pixel-perfect identities, premium social assets, and memorable vector art.
                     </p>
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#portfolio" class="bg-gradient-brand text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:opacity-95 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 sm:pt-4">
+                        <a href="#portfolio" class="bg-gradient-brand text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:opacity-95 transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm sm:text-base lang" data-en="View Portfolio" data-mm="လက်ရာများ ကြည့်ရှုရန်">
                             View Portfolio <i class="fas fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#contact" class="px-8 py-4 rounded-2xl font-semibold border border-slate-300 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all flex items-center gap-2 shadow-sm">
+                        <a href="#contact" class="px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-semibold border border-slate-300 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all flex items-center gap-2 shadow-sm text-sm sm:text-base lang" data-en="Contact Me" data-mm="ဆက်သွယ်မေးမြန်းရန်">
                             Contact Me
                         </a>
                     </div>
                 </div>
-                <div class="lg:col-span-5 relative flex justify-center">
-                    <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl overflow-hidden glass shadow-2xl p-4 flex items-center justify-center group border border-slate-200 dark:border-zinc-800">
-                        <div class="w-full h-full rounded-2xl bg-zinc-900 flex flex-col items-center justify-center relative overflow-hidden text-center p-6">
-                            <div class="absolute inset-0 bg-gradient-brand opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                            <i class="fa-solid fa-bezier-curve text-6xl text-brand-orange mb-4 transform group-hover:scale-110 transition-transform duration-500"></i>
-                            <span class="text-xl font-bold tracking-widest text-white uppercase">Creative Mind</span>
-                            <span class="text-xs text-zinc-400 mt-1">Vector â€¢ Branding â€¢ Layouts</span>
+                
+                <!-- Premium Polygonal Shield Profile Showcase Structure -->
+                <div class="lg:col-span-5 flex justify-center order-1 lg:order-2" data-aos="fade-left">
+                    <div class="relative w-56 h-64 sm:w-80 sm:h-96 lg:w-full lg:max-w-md p-2 flex items-center justify-center group">
+                        <!-- Futuristic Background Border Lines -->
+                        <div class="absolute inset-0 bg-gradient-brand opacity-40 designer-shield blur-sm group-hover:scale-105 transition-transform duration-500"></div>
+                        <div class="absolute inset-1 bg-slate-50 dark:bg-zinc-950 designer-shield z-10"></div>
+                        <!-- Core Profile Area -->
+                        <div class="absolute inset-3 rounded-2xl overflow-hidden bg-zinc-900 designer-shield z-20">
+                            <img src="https://i.ibb.co/v2h7d93/My.png" alt="Khant Zayar Thu Profile" class="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-500 object-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24">
-            <div class="glass rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200 dark:border-zinc-800">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- About Showcase Canvas Area -->
+        <section id="about" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24">
+            <div class="glass rounded-3xl p-6 sm:p-12 shadow-xl border border-slate-200 dark:border-zinc-800" data-aos="fade-up">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                     <div class="lg:col-span-5 text-center lg:text-left">
-                        <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2">About Me</h2>
-                        <h3 class="text-3xl sm:text-4xl font-bold mb-6">Designing with Purpose and Passion</h3>
-                        <p class="text-slate-600 dark:text-zinc-400 font-light leading-relaxed mb-6">
-                            Hello! I am the lead designer behind Zee Studio. With over half a decade working alongside forward-thinking brands, I blend standard art design practices with conceptual modern tech aesthetics to maximize visual engagement.
+                        <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2 lang" data-en="About Me" data-mm="ကျွန်ုပ်အကြောင်း">About Me</h2>
+                        <h3 class="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 lang" data-en="Designing with Purpose and Passion" data-mm="ရည်ရွယ်ချက်ရှိရှိနှင့် ဖန်တီးမှုအနုပညာ">Designing with Purpose and Passion</h3>
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-zinc-400 font-light leading-relaxed mb-6 lang"
+                           data-en="Hello! I am Khant Zayar Thu, the lead creator behind Zee Studio. I blend structural design frameworks with cutting-edge conceptual layouts to maximize visual impact and elevate corporate presence."
+                           data-mm="မင်္ဂလာပါဗျာ! ကျွန်တော်ကတော့ Zee Studio ရဲ့ Lead Designer 'ခန့်ဇေယျာသူ' ဖြစ်ပါတယ်။ စနစ်ကျတဲ့ ဒီဇိုင်းဖွဲ့စည်းပုံတွေ၊ ဆန်းသစ်တဲ့ အနုပညာအမြင်တွေကို ပေါင်းစပ်ပြီး သင့် Brand ရဲ့ တန်ဖိုးကို လူအများကြားမှာ ထင်ပေါ်ဝင်းပလာအောင် အကောင်းဆုံး ဖန်တီးပေးနေပါတယ်ဗျာ။">
+                            Hello! I am Khant Zayar Thu, the lead creator behind Zee Studio. I blend structural design frameworks with cutting-edge conceptual layouts to maximize visual impact and elevate corporate presence.
                         </p>
-                        <div class="grid grid-cols-2 gap-4 text-left">
-                            <div class="p-4 bg-slate-100/50 dark:bg-zinc-900/50 rounded-2xl border border-slate-200/50 dark:border-zinc-800/50">
-                                <h4 class="text-2xl font-bold text-brand-orange">50+</h4>
-                                <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1">Happy Clients Worldwide</p>
-                            </div>
-                            <div class="p-4 bg-slate-100/50 dark:bg-zinc-900/50 rounded-2xl border border-slate-200/50 dark:border-zinc-800/50">
-                                <h4 class="text-2xl font-bold text-brand-red">500+</h4>
-                                <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1">Projects Delivered</p>
-                            </div>
-                        </div>
                     </div>
-                    <div class="lg:col-span-7 space-y-6">
-                        <h4 class="text-xl font-bold">My Design Philosophy</h4>
-                        <p class="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                            Every brand tells a story, and great design is the ultimate translator. I believe minimalist balance mixed with explosive, high-impact asset accents provides premium scalability for small startups and corporate giants alike.
+                    <div class="lg:col-span-7 space-y-4 sm:space-y-6">
+                        <h4 class="text-lg sm:text-xl font-bold lang" data-en="My Design Philosophy" data-mm="ကျွန်တော့်ရဲ့ ဒီဇိုင်းခံယူချက်">My Design Philosophy</h4>
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-zinc-400 font-light leading-relaxed lang"
+                           data-en="Every brand possesses an authentic core narrative, and premium design operates as its ultimate translator. I believe structured geometric layouts balanced by vibrant asset highlights build absolute scalable consistency."
+                           data-mm="စီးပွားရေးလုပ်ငန်းတိုင်းမှာ ကိုယ်ပိုင်ထူးခြားတဲ့ နောက်ခံဇာတ်လမ်းတွေ ရှိကြပါတယ်။ အဆင့်မြင့်တဲ့ ဒီဇိုင်းတစ်ခုက အဲဒီအချက်ကို လူတွေနားလည်အောင် ရှင်းလင်းစွာ ဘာသာပြန်ပေးနိုင်ပါတယ်။ ခိုင်မာသေသပ်တဲ့ မျဉ်းကွေးဂျီဩမေတြီပုံစံတွေနဲ့ အရောင်အသွေးစပ်ပုံတွေက သင့်လုပ်ငန်းကို ပိုမိုခိုင်မာစေတယ်လို့ ကျွန်တော် ယုံကြည်ပါတယ်။">
+                            Every brand possesses an authentic core narrative, and premium design operates as its ultimate translator. I believe structured geometric layouts balanced by vibrant asset highlights build absolute scalable consistency.
                         </p>
-                        <blockquote class="border-l-4 border-brand-orange pl-4 italic text-slate-700 dark:text-zinc-300 bg-slate-100 dark:bg-zinc-900 py-3 pr-3 rounded-r-xl text-sm">
+                        <blockquote class="border-l-4 border-brand-orange pl-4 italic text-slate-700 dark:text-zinc-300 bg-slate-100 dark:bg-zinc-900 py-3 pr-3 rounded-r-xl text-xs sm:text-sm">
                             "Design is not just what it looks like and feels like. Design is how it works."
                         </blockquote>
                     </div>
@@ -179,317 +203,162 @@
             </div>
         </section>
 
-        <section id="services" class="py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2">Expertise</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold">What I Can Do For You</h3>
+        <!-- Services Presentation Panel -->
+        <section id="services" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2 lang" data-en="Expertise" data-mm="ကျွမ်းကျင်မှု ကဏ္ဍများ">Expertise</h2>
+                <h3 class="text-2xl sm:text-4xl font-bold lang" data-en="What I Can Do For You" data-mm="ဖန်တီးပေးနိုင်မယ့် ဝန်ဆောင်မှုများ">What I Can Do For You</h3>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass p-6 rounded-2xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1 border border-slate-200 dark:border-zinc-800 group">
-                    <div class="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-gradient-brand group-hover:text-white transition-all">
-                        <i class="fas fa-crown text-xl"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Branding Card -->
+                <div class="glass p-6 rounded-2xl shadow-md border border-slate-200 dark:border-zinc-800 group" data-aos="fade-up">
+                    <div class="w-11 h-11 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-gradient-brand group-hover:text-white transition-all">
+                        <i class="fas fa-crown text-lg"></i>
                     </div>
-                    <h4 class="text-lg font-bold mb-2">Branding Design</h4>
-                    <p class="text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                        Comprehensive style-guides, typography systems, and high-impact identity solutions built for consistency.
-                    </p>
+                    <h4 class="text-base sm:text-lg font-bold mb-2 lang" data-en="Branding Design" data-mm="Branding Strategy">Branding Design</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed lang" data-en="Comprehensive style-guides, typography systems, and identity setups built for consistency." data-mm="သင့်လုပ်ငန်းအတွက် စနစ်ကျလှပပြီး ရေရှည်ယှဉ်ပြိုင်နိုင်စွမ်းရှိမည့် Brand Identity စတိုင်များကို ဖန်တီးပေးခြင်း။">Comprehensive style-guides, typography systems, and identity setups built for consistency.</p>
                 </div>
-                <div class="glass p-6 rounded-2xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1 border border-slate-200 dark:border-zinc-800 group">
-                    <div class="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-gradient-brand group-hover:text-white transition-all">
-                        <i class="fas fa-share-nodes text-xl"></i>
+                <!-- Social Media -->
+                <div class="glass p-6 rounded-2xl shadow-md border border-slate-200 dark:border-zinc-800 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-11 h-11 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-gradient-brand group-hover:text-white transition-all">
+                        <i class="fas fa-share-nodes text-lg"></i>
                     </div>
-                    <h4 class="text-lg font-bold mb-2">Social Media Design</h4>
-                    <p class="text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                        Engaging templates, post kits, covers, and promotional carousels optimized for conversion analytics.
-                    </p>
+                    <h4 class="text-base sm:text-lg font-bold mb-2 lang" data-en="Social Media Design" data-mm="လူမှုကွန်ရက် ဒီဇိုင်းများ">Social Media Design</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed lang" data-en="Engaging template layouts, promotional post bundles, and premium banner assets." data-mm="Facebook, TikTok တို့အတွက် လူအများစိတ်ဝင်စားပြီး Conversion တက်စေမည့် ခေတ်မီ Poster နှင့် Video Cover များ။">Engaging template layouts, promotional post bundles, and premium banner assets.</p>
                 </div>
-                <div class="glass p-6 rounded-2xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1 border border-slate-200 dark:border-zinc-800 group">
-                    <div class="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-gradient-brand group-hover:text-white transition-all">
-                        <i class="fas fa-pen-nib text-xl"></i>
+                <!-- Logo -->
+                <div class="glass p-6 rounded-2xl shadow-md border border-slate-200 dark:border-zinc-800 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-11 h-11 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-gradient-brand group-hover:text-white transition-all">
+                        <i class="fas fa-pen-nib text-lg"></i>
                     </div>
-                    <h4 class="text-lg font-bold mb-2">Logo Design</h4>
-                    <p class="text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                        Bespoke vector symbols that instantly communicate values, ensuring scalable visibility everywhere.
-                    </p>
+                    <h4 class="text-base sm:text-lg font-bold mb-2 lang" data-en="Logo Design" data-mm="လိုဂို ဒီဇိုင်း">Logo Design</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed lang" data-en="Bespoke vector symbols that communicate core professional values instantly." data-mm="လုပ်ငန်းတစ်ခုရဲ့ အဓိကရည်ရွယ်ချက်ကို အလွယ်တကူသိသာစေမည့် အရည်အသွေးမြင့် စိတ်ကြိုက် Vector လိုဂိုဒီဇိုင်းများ။">Bespoke vector symbols that communicate core professional values instantly.</p>
                 </div>
-                <div class="glass p-6 rounded-2xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1 border border-slate-200 dark:border-zinc-800 group">
-                    <div class="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-gradient-brand group-hover:text-white transition-all">
-                        <i class="fas fa-print text-xl"></i>
+                <!-- Print -->
+                <div class="glass p-6 rounded-2xl shadow-md border border-slate-200 dark:border-zinc-800 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-11 h-11 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-gradient-brand group-hover:text-white transition-all">
+                        <i class="fas fa-print text-lg"></i>
                     </div>
-                    <h4 class="text-lg font-bold mb-2">Print Design</h4>
-                    <p class="text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                        High-resolution posters, luxurious business cards, merchandise styling, and magazine structural layouts.
-                    </p>
+                    <h4 class="text-base sm:text-lg font-bold mb-2 lang" data-en="Print Design" data-mm="ပုံနှိပ်လုပ်ငန်းသုံး ဒီဇိုင်း">Print Design</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed lang" data-en="High-resolution posters, packaging graphics, and menu architectures." data-mm="ဆိုင်ဖွင့်ပွဲကြော်ငြာများ၊ စားသောက်ဆိုင်သုံး Menu များအပြင် ရှင်းလင်းပြတ်သားသော High-Res ပုံနှိပ်ဇယားကွက်များ။">High-resolution posters, packaging graphics, and menu architectures.</p>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2">Showcase</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold">Selected Masterpieces</h3>
+        <!-- Portfolio Filtering Grid Segment -->
+        <section id="portfolio" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2 lang" data-en="Showcase" data-mm="ပြခန်း">Showcase</h2>
+                <h3 class="text-2xl sm:text-4xl font-bold lang" data-en="Selected Projects" data-mm="ဖန်တီးခဲ့သော လက်ရာအချို့">Selected Projects</h3>
             </div>
-
-            <div class="flex flex-wrap justify-center items-center gap-2 mb-12">
-                <button data-filter="all" class="filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-gradient-brand text-white transition-all shadow-sm">All Projects</button>
-                <button data-filter="branding" class="filter-btn px-5 py-2 rounded-xl text-sm font-medium border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">Branding</button>
-                <button data-filter="social" class="filter-btn px-5 py-2 rounded-xl text-sm font-medium border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">Social Media</button>
-                <button data-filter="logo" class="filter-btn px-5 py-2 rounded-xl text-sm font-medium border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">Logo Design</button>
-                <button data-filter="print" class="filter-btn px-5 py-2 rounded-xl text-sm font-medium border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">Print</button>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-                <div class="portfolio-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-6" data-category="branding" data-title="Aura Luxury Brand System" data-desc="Complete corporate architecture system utilizing golden vectors and black luxury color spacing setup.">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Portfolio Sample Item 1 -->
+                <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-5 sm:p-6" data-aos="fade-up">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-80 group-hover:opacity-95 transition-opacity"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-8 bg-gradient-brand opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                    <i class="fa-solid fa-gem text-5xl text-brand-orange absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
-                    <div class="relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <i class="fa-solid fa-gem text-4xl sm:text-5xl text-brand-orange absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
+                    <div class="relative z-20">
                         <span class="text-xs font-semibold text-brand-orange uppercase tracking-widest">Branding</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Aura Luxury Brand System</h4>
+                        <h4 class="text-lg sm:text-xl font-bold text-white mt-1">Aura Luxury Brand System</h4>
                     </div>
                 </div>
-
-                <div class="portfolio-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-6" data-category="logo" data-title="Nexus Tech Logo Identity" data-desc="Futuristic geometric abstract letterforms designed explicitly for a modern cloud scaling interface company.">
+                <!-- Portfolio Sample Item 2 -->
+                <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-5 sm:p-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-80 group-hover:opacity-95 transition-opacity"></div>
-                    <i class="fa-solid fa-atom text-5xl text-brand-red absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
-                    <div class="relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <i class="fa-solid fa-atom text-4xl sm:text-5xl text-brand-red absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
+                    <div class="relative z-20">
                         <span class="text-xs font-semibold text-brand-orange uppercase tracking-widest">Logo Design</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Nexus Tech Logo Identity</h4>
+                        <h4 class="text-lg sm:text-xl font-bold text-white mt-1">Nexus Tech Identity</h4>
                     </div>
                 </div>
-
-                <div class="portfolio-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-6" data-category="social" data-title="Cyberpunk Streaming Kit" data-desc="High energy promotional asset designs used across Twitch and YouTube layouts to engage younger demographics.">
+                <!-- Portfolio Sample Item 3 -->
+                <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-5 sm:p-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-80 group-hover:opacity-95 transition-opacity"></div>
-                    <i class="fa-solid fa-gamepad text-5xl text-brand-orange absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
-                    <div class="relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <i class="fa-solid fa-gamepad text-4xl sm:text-5xl text-brand-orange absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
+                    <div class="relative z-20">
                         <span class="text-xs font-semibold text-brand-orange uppercase tracking-widest">Social Media</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Cyberpunk Streaming Kit</h4>
-                    </div>
-                </div>
-
-                <div class="portfolio-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-6" data-category="print" data-title="Metropolitan Magazine Cover" data-desc="Editorial layout architecture with custom kerning alignments and premium matte print export layouts.">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-80 group-hover:opacity-95 transition-opacity"></div>
-                    <i class="fa-solid fa-newspaper text-5xl text-brand-red absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
-                    <div class="relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <span class="text-xs font-semibold text-brand-orange uppercase tracking-widest">Print</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Metropolitan Magazine Cover</h4>
-                    </div>
-                </div>
-
-                <div class="portfolio-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-6" data-category="branding" data-title="EcoHarvest Eco Packaging" data-desc="Sustainable visual designs using structural paper texturing overlays and completely organic vector assets.">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-80 group-hover:opacity-95 transition-opacity"></div>
-                    <i class="fa-solid fa-leaf text-5xl text-brand-orange absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
-                    <div class="relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <span class="text-xs font-semibold text-brand-orange uppercase tracking-widest">Branding</span>
-                        <h4 class="text-xl font-bold text-white mt-1">EcoHarvest Eco Packaging</h4>
-                    </div>
-                </div>
-
-                <div class="portfolio-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 bg-zinc-900 aspect-video flex flex-col justify-end p-6" data-category="logo" data-title="Zenith Peak Corporate Emblem" data-desc="Minimalist monoline custom geometry showing peak scales representing geometric progression formulas.">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-80 group-hover:opacity-95 transition-opacity"></div>
-                    <i class="fa-solid fa-mountain text-5xl text-brand-red absolute top-1/3 left-1/2 transform -translate-x-1/2 opacity-20 group-hover:opacity-40 transition-opacity"></i>
-                    <div class="relative z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <span class="text-xs font-semibold text-brand-orange uppercase tracking-widest">Logo Design</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Zenith Peak Corporate Emblem</h4>
+                        <h4 class="text-lg sm:text-xl font-bold text-white mt-1">Cyberpunk Streaming Kit</h4>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2">Tools</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold">Technical Arsenal</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                <div class="glass p-6 rounded-2xl border border-slate-200 dark:border-zinc-800 text-center">
-                    <i class="fa-solid fa-bezier-curve text-3xl text-brand-orange mb-3"></i>
-                    <h4 class="font-bold text-base">Adobe Illustrator</h4>
-                    <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1">Vector Mastery</p>
-                    <div class="w-full bg-slate-200 dark:bg-zinc-800 h-2 rounded-full mt-4 overflow-hidden">
-                        <div class="bg-gradient-brand h-full rounded-full" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-200 dark:border-zinc-800 text-center">
-                    <i class="fa-solid fa-wand-magic-sparkles text-3xl text-brand-red mb-3"></i>
-                    <h4 class="font-bold text-base">Adobe Photoshop</h4>
-                    <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1">Raster Manipulation</p>
-                    <div class="w-full bg-slate-200 dark:bg-zinc-800 h-2 rounded-full mt-4 overflow-hidden">
-                        <div class="bg-gradient-brand h-full rounded-full" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-200 dark:border-zinc-800 text-center">
-                    <i class="fa-brands fa-figma text-3xl text-brand-orange mb-3"></i>
-                    <h4 class="font-bold text-base">Figma</h4>
-                    <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1">UI & Layout Prototyping</p>
-                    <div class="w-full bg-slate-200 dark:bg-zinc-800 h-2 rounded-full mt-4 overflow-hidden">
-                        <div class="bg-gradient-brand h-full rounded-full" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-200 dark:border-zinc-800 text-center">
-                    <i class="fa-solid fa-sliders text-3xl text-brand-red mb-3"></i>
-                    <h4 class="font-bold text-base">Lightroom</h4>
-                    <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1">Color Correction</p>
-                    <div class="w-full bg-slate-200 dark:bg-zinc-800 h-2 rounded-full mt-4 overflow-hidden">
-                        <div class="bg-gradient-brand h-full rounded-full" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="glass p-6 rounded-2xl border border-slate-200 dark:border-zinc-800 text-center">
-                    <i class="fa-solid fa-clapperboard text-3xl text-brand-orange mb-3"></i>
-                    <h4 class="font-bold text-base">After Effects</h4>
-                    <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1">Motion Graphics</p>
-                    <div class="w-full bg-slate-200 dark:bg-zinc-800 h-2 rounded-full mt-4 overflow-hidden">
-                        <div class="bg-gradient-brand h-full rounded-full" style="width: 75%"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 px-4 sm:px-8 max-w-5xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2">History</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold">Milestones & Journey</h3>
-            </div>
-
-            <div class="relative border-l border-slate-200 dark:border-zinc-800 ml-4 md:ml-32 space-y-10">
-                <div class="relative pl-8 group">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-50 dark:bg-zinc-950 border-4 border-brand-orange group-hover:scale-120 transition-transform"></div>
-                    <div class="absolute left-[-110px] top-1 text-sm font-semibold text-slate-400 dark:text-zinc-500 hidden md:block w-20 text-right">2023 - Pres</div>
-                    <div class="glass p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-zinc-800">
-                        <span class="text-xs font-bold text-brand-orange md:hidden">2023 - Present</span>
-                        <h4 class="text-lg font-bold">Senior Brand Strategist</h4>
-                        <p class="text-xs text-slate-500 dark:text-zinc-400 font-medium mb-2">Zee Studio Lead</p>
-                        <p class="text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                            Spearheading art direction for technical products, producing premium layouts, vector architectures, and high-conversion assets.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative pl-8 group">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-50 dark:bg-zinc-950 border-4 border-brand-red group-hover:scale-120 transition-transform"></div>
-                    <div class="absolute left-[-110px] top-1 text-sm font-semibold text-slate-400 dark:text-zinc-500 hidden md:block w-20 text-right">2021 - 2023</div>
-                    <div class="glass p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-zinc-800">
-                        <span class="text-xs font-bold text-brand-red md:hidden">2021 - 2023</span>
-                        <h4 class="text-lg font-bold">Graphic Designer</h4>
-                        <p class="text-xs text-slate-500 dark:text-zinc-400 font-medium mb-2">Global Creative Agency</p>
-                        <p class="text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                            Crafted identity kits and marketing assets for international print campaigns and complex vector layouts.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative pl-8 group">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-50 dark:bg-zinc-950 border-4 border-brand-orange group-hover:scale-120 transition-transform"></div>
-                    <div class="absolute left-[-110px] top-1 text-sm font-semibold text-slate-400 dark:text-zinc-500 hidden md:block w-20 text-right">2018 - 2021</div>
-                    <div class="glass p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-zinc-800">
-                        <span class="text-xs font-bold text-brand-orange md:hidden">2018 - 2021</span>
-                        <h4 class="text-lg font-bold">Bachelor of Fine Arts (Design)</h4>
-                        <p class="text-xs text-slate-500 dark:text-zinc-400 font-medium mb-2">Metropolitan University of Creative Art</p>
-                        <p class="text-sm text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                            Studied fundamental typography structures, core visual packaging methods, and structural spatial logic setups.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 px-4 sm:px-8 max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2">Endorsements</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold">Client Reviews</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="glass p-8 rounded-2xl border border-slate-200 dark:border-zinc-800 flex flex-col justify-between">
-                    <p class="text-slate-600 dark:text-zinc-400 font-light italic leading-relaxed mb-6">
-                        "Zee Studio completely revolutionized our branding. The vector files were incredibly organized, scalable, and the colors perfectly captured our market voice."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-orange/20 flex items-center justify-center font-bold text-brand-orange">AM</div>
+        <!-- Contact Framework Infrastructure Layer -->
+        <section id="contact" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24 mb-12 sm:mb-16">
+            <div class="glass rounded-3xl p-6 sm:p-12 shadow-2xl border border-slate-200 dark:border-zinc-800" data-aos="zoom-in">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+                    <div class="lg:col-span-5 space-y-5 sm:space-y-6">
                         <div>
-                            <h4 class="text-sm font-bold">Alexander Mercer</h4>
-                            <p class="text-xs text-slate-400 dark:text-zinc-500">CEO, Nexus Enterprises</p>
+                            <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2 lang" data-en="Connect" data-mm="ဆက်သွယ်ရန်လိပ်စာ">Connect</h2>
+                            <h3 class="text-2xl sm:text-3xl font-bold lang" data-en="Let's Bring Your Concepts To Life" data-mm="စိတ်ကူးများကို လက်တွေ့ဖန်တီးကြစို့">Let's Bring Your Concepts To Life</h3>
                         </div>
-                    </div>
-                </div>
-                <div class="glass p-8 rounded-2xl border border-slate-200 dark:border-zinc-800 flex flex-col justify-between">
-                    <p class="text-slate-600 dark:text-zinc-400 font-light italic leading-relaxed mb-6">
-                        "Incredibly responsive and highly creative asset delivery! The turnaround time on our social media promotional launch kit was seamless and highly professional."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-red/20 flex items-center justify-center font-bold text-brand-red">SH</div>
-                        <div>
-                            <h4 class="text-sm font-bold">Sarah Jenkins</h4>
-                            <p class="text-xs text-slate-400 dark:text-zinc-500">Marketing VP, Aura Cosmetics</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-16 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-24 mb-16">
-            <div class="glass rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-200 dark:border-zinc-800">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <div class="lg:col-span-5 space-y-6">
-                        <div>
-                            <h2 class="text-xs uppercase tracking-widest font-bold text-brand-orange mb-2">Connect</h2>
-                            <h3 class="text-3xl font-bold">Let's Bring Your Concepts To Life</h3>
-                        </div>
-                        <p class="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                            Have an upcoming project, brand repositioning effort, or need unique design consulting? Drop a message!
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-zinc-400 font-light leading-relaxed lang" data-en="Have an upcoming project, brand repositioning effort, or need high-end design consultation? Reach out directly via the networks below." data-mm="လုပ်ငန်းသစ်အတွက် ဒီဇိုင်းဖန်တီးလိုပါက သို့မဟုတ် အနုပညာမြောက်ဒီဇိုင်းအကြံဉာဏ်များ ရယူလိုပါက အောက်ပါ လိပ်စာများမှတစ်ဆင့် တိုက်ရိုက် ဆက်သွယ်စကားပြောနိုင်ပါသည်ဗျာ။">
+                            Have an upcoming project, brand repositioning effort, or need high-end design consultation? Reach out directly via the networks below.
                         </p>
-
-                        <div class="space-y-4 pt-4">
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 flex items-center justify-center text-brand-orange">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <span class="text-sm font-medium">hello@zeestudio.design</span>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 flex items-center justify-center text-brand-red">
+                        
+                        <!-- Contact Directory -->
+                        <div class="space-y-3.5 pt-2">
+                            <!-- Phone -->
+                            <a href="tel:+959764182842" class="flex items-center gap-4 group w-fit">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 flex items-center justify-center text-brand-orange group-hover:scale-110 transition-transform">
                                     <i class="fas fa-phone"></i>
                                 </div>
-                                <span class="text-sm font-medium">+1 (555) 234-5678</span>
+                                <span class="text-sm font-medium hover:text-brand-orange transition-colors">+959 764 182 842</span>
+                            </a>
+                            <!-- Email -->
+                            <a href="mailto:zayar12126@gmail.com" class="flex items-center gap-4 group w-fit">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 flex items-center justify-center text-brand-orange group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span class="text-sm font-medium hover:text-brand-orange transition-colors">zayar12126@gmail.com</span>
+                            </a>
+                            <!-- Telegram -->
+                            <a href="https://t.me/Agatsame" target="_blank" class="flex items-center gap-4 group w-fit">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 flex items-center justify-center text-sky-500 group-hover:scale-110 transition-transform">
+                                    <i class="fab fa-telegram"></i>
+                                </div>
+                                <span class="text-sm font-medium hover:text-brand-orange transition-colors">@Agatsame (Ta Yaun)</span>
+                            </a>
+                            <!-- WeChat -->
+                            <div class="flex items-center gap-4 group cursor-default w-fit">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 flex items-center justify-center text-emerald-500">
+                                    <i class="fab fa-weixin"></i>
+                                </div>
+                                <span class="text-sm font-medium">tayaun2684 (Ta Yaun)</span>
                             </div>
                         </div>
 
-                        <div class="flex gap-3 pt-4">
-                            <a href="#" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-brand-orange hover:text-white transition-all flex items-center justify-center text-sm shadow-sm"><i class="fab fa-behance"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-brand-orange hover:text-white transition-all flex items-center justify-center text-sm shadow-sm"><i class="fab fa-dribbble"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-brand-orange hover:text-white transition-all flex items-center justify-center text-sm shadow-sm"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-brand-orange hover:text-white transition-all flex items-center justify-center text-sm shadow-sm"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- Social Handles Platforms Links -->
+                        <div class="flex gap-3 pt-2">
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/profile.php?id=100088212134262" target="_blank" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center text-base shadow-sm" title="Facebook Khant Zayar Thu">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <!-- TikTok -->
+                            <a href="https://www.tiktok.com/@zeestudio" target="_blank" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all flex items-center justify-center text-base shadow-sm" title="TikTok Zee Studio">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
                         </div>
                     </div>
-
-                    <div class="lg:col-span-7 bg-slate-50 dark:bg-zinc-900/60 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-zinc-800/80">
-                        <form id="contact-form" class="space-y-4" onsubmit="event.preventDefault(); alert('Message sent successfully! (Demo Mode)');">
+                    
+                    <!-- Direct Interaction Form -->
+                    <div class="lg:col-span-7 bg-slate-50 dark:bg-zinc-900/60 p-5 sm:p-8 rounded-2xl border border-slate-200 dark:border-zinc-800/80">
+                        <form id="contact-form" class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Message route system active.');">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div class="space-y-1">
-                                    <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Full Name</label>
+                                    <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400 lang" data-en="Full Name" data-mm="နာမည်အပြည့်အစုံ">Full Name</label>
                                     <input type="text" required class="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:border-brand-orange text-sm transition-all">
                                 </div>
                                 <div class="space-y-1">
-                                    <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Email Address</label>
+                                    <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400 lang" data-en="Email Address" data-mm="အီးမေးလ် လိပ်စာ">Email Address</label>
                                     <input type="email" required class="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:border-brand-orange text-sm transition-all">
                                 </div>
                             </div>
                             <div class="space-y-1">
-                                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Project Type</label>
-                                <select class="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:border-brand-orange text-sm transition-all text-slate-500">
-                                    <option>Branding Identity</option>
-                                    <option>Social Media Assets</option>
-                                    <option>Logo Creation</option>
-                                    <option>Print & Packaging</option>
-                                </select>
-                            </div>
-                            <div class="space-y-1">
-                                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Your Message</label>
+                                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400 lang" data-en="Your Message" data-mm="ပေးပို့လိုသော စာသား">Your Message</label>
                                 <textarea rows="4" required class="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:border-brand-orange text-sm transition-all resize-none"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-gradient-brand text-white font-semibold py-4 rounded-xl shadow-md hover:shadow-xl hover:opacity-95 transform hover:-translate-y-0.5 transition-all">
+                            <button type="submit" class="w-full bg-gradient-brand text-white font-semibold py-3.5 sm:py-4 rounded-xl shadow-md hover:shadow-xl hover:opacity-95 transform hover:-translate-y-0.5 transition-all text-sm sm:text-base lang" data-en="Send Message" data-mm="မက်ဆေ့ခ်ျ ပို့ရန်">
                                 Send Message
                             </button>
                         </form>
@@ -499,47 +368,36 @@
         </section>
     </main>
 
-    <footer class="border-t border-slate-200 dark:border-zinc-900 py-8 px-4 text-center text-xs text-slate-500 dark:text-zinc-500">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 Zee Studio. All Rights Reserved.</p>
+    <!-- Footer Copyright Area -->
+    <footer class="border-t border-slate-200 dark:border-zinc-900 py-6 sm:py-8 px-4 text-center text-xs text-slate-500 dark:text-zinc-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p>&copy; 2026 Zee Studio. Crafted with Passion.</p>
             <div class="flex gap-6">
-                <a href="#" class="hover:text-brand-orange transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-brand-orange transition-colors">Terms of Service</a>
+                <span>Khant Zayar Thu Portfolio</span>
             </div>
         </div>
     </footer>
 
-    <div id="project-modal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
-        <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-        <div class="glass relative rounded-3xl max-w-2xl w-full z-10 border border-slate-200 dark:border-zinc-800 overflow-hidden shadow-2xl p-6 sm:p-8 transform scale-95 transition-all duration-300">
-            <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 flex items-center justify-center hover:text-brand-orange transition-colors">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="w-full aspect-video rounded-2xl bg-zinc-900 flex items-center justify-center text-6xl text-brand-orange border border-zinc-800 mb-6">
-                <i id="modal-icon" class="fa-solid fa-bezier-curve"></i>
-            </div>
-            <span id="modal-category" class="text-xs font-semibold text-brand-orange uppercase tracking-widest">Category</span>
-            <h3 id="modal-title" class="text-2xl font-bold mt-1 mb-3 text-slate-900 dark:text-white">Project Title</h3>
-            <p id="modal-desc" class="text-slate-600 dark:text-zinc-400 font-light leading-relaxed text-sm">Detailed project description goes here.</p>
-            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-zinc-800 flex justify-end gap-3">
-                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl text-xs font-medium border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">Close Window</button>
-                <a href="#contact" onclick="closeModal()" class="px-5 py-2.5 rounded-xl text-xs font-medium bg-gradient-brand text-white shadow-sm hover:opacity-90 transition-all">Inquire About Similar Work</a>
-            </div>
-        </div>
-    </div>
-
+    <!-- Scripts Framework Assembly -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // Sticky Header Accent Control
+        // AOS Scroll Animation Initialization 
+        AOS.init({
+            duration: 900,
+            once: true
+        });
+
+        // Sticky Navbar Compression Setup Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
-                navbar.classList.add('px-0', 'py-2');
+                navbar.classList.add('px-0', 'py-1');
             } else {
-                navbar.classList.remove('px-0', 'py-2');
+                navbar.classList.remove('px-0', 'py-1');
             }
         });
 
-        // Mobile Dropdown Drawer Display Controls
+        // Mobile Toggle Display Layout Controls Drawer
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => {
@@ -549,64 +407,7 @@
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        // Portfolio Filtering Architecture Logic
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Adjust Active Button styling states
-                filterButtons.forEach(b => {
-                    b.classList.remove('bg-gradient-brand', 'text-white');
-                    b.classList.add('border', 'border-slate-200', 'dark:border-zinc-800', 'hover:bg-slate-100', 'dark:hover:bg-zinc-900');
-                });
-                btn.classList.add('bg-gradient-brand', 'text-white');
-                btn.classList.remove('border', 'border-slate-200', 'dark:border-zinc-800', 'hover:bg-slate-100', 'dark:hover:bg-zinc-900');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'flex';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Modal Presentation Management Architecture
-        const modal = document.getElementById('project-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-desc');
-        const modalCategory = document.getElementById('modal-category');
-        const modalIcon = document.getElementById('modal-icon');
-
-        portfolioItems.forEach(item => {
-            item.addEventListener('click', () => {
-                modalTitle.textContent = item.getAttribute('data-title');
-                modalDesc.textContent = item.getAttribute('data-desc');
-                
-                const rawCategory = item.getAttribute('data-category');
-                modalCategory.textContent = rawCategory.charAt(0).toUpperCase() + rawCategory.slice(1);
-                
-                // Mirror core project icon references inside modal display structures
-                const cardIcon = item.querySelector('i');
-                if (cardIcon) {
-                    modalIcon.className = cardIcon.className;
-                }
-
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        // Production Light/Dark System Integration Control Setup
+        // Theme Toggle Infrastructure Management Rules
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const htmlElement = document.documentElement;
@@ -614,23 +415,58 @@
         themeToggleBtn.addEventListener('click', () => {
             if (htmlElement.classList.contains('dark')) {
                 htmlElement.classList.remove('dark');
-                themeIcon.className = 'fas fa-sun text-lg text-brand-orange';
+                themeIcon.className = 'fas fa-sun text-base sm:text-lg text-brand-orange';
                 localStorage.setItem('theme', 'light');
             } else {
                 htmlElement.classList.add('dark');
-                themeIcon.className = 'fas fa-moon text-lg text-brand-orange';
+                themeIcon.className = 'fas fa-moon text-base sm:text-lg text-brand-orange';
                 localStorage.setItem('theme', 'dark');
             }
         });
 
-        // Match System Preference Layout Rules if initialization parameters are absent
         if (localStorage.getItem('theme') === 'light') {
             htmlElement.classList.remove('dark');
-            themeIcon.className = 'fas fa-sun text-lg text-brand-orange';
+            themeIcon.className = 'fas fa-sun text-base sm:text-lg text-brand-orange';
         } else {
             htmlElement.classList.add('dark');
-            themeIcon.className = 'fas fa-moon text-lg text-brand-orange';
+            themeIcon.className = 'fas fa-moon text-base sm:text-lg text-brand-orange';
         }
+
+        // Language Switcher Architecture Engine
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFlag = document.getElementById('lang-flag');
+        const langText = document.getElementById('lang-text');
+        let currentLang = localStorage.getItem('preferred_lang') || 'en';
+
+        function updateLanguageUI(lang) {
+            const elements = document.querySelectorAll('.lang');
+            elements.forEach(el => {
+                if (lang === 'mm') {
+                    el.textContent = el.getAttribute('data-mm');
+                } else {
+                    el.textContent = el.getAttribute('data-en');
+                }
+            });
+
+            if (lang === 'mm') {
+                langFlag.textContent = '🇺🇸';
+                langText.textContent = 'English';
+                document.documentElement.lang = 'mm';
+            } else {
+                langFlag.textContent = '🇲🇲';
+                langText.textContent = 'မြန်မာ';
+                document.documentElement.lang = 'en';
+            }
+        }
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'mm' : 'en';
+            localStorage.setItem('preferred_lang', currentLang);
+            updateLanguageUI(currentLang);
+        });
+
+        // Run Language Initialization Parameter Check
+        updateLanguageUI(currentLang);
     </script>
 </body>
 </html>
